@@ -20,7 +20,7 @@
 
 [Components]
   MdeModulePkg/Universal/CapsulePei/CapsulePei.inf
-  ArmPlatformPkg/ArmPlatformPkg.dsc
+  ArmPlatformPkg/Universal/ArmPkg/ArmPkg.inf  # ArmPlatformPkg/ArmPlatformPkg.dsc এর জায়গায়
   PlatformPkg/PlatformPkg.dsc
   PlatformPkg/Drivers/CoolingFanDxe/CoolingFanDxe.inf
   PlatformPkg/Drivers/BluetoothDxe/BluetoothDxe.inf
