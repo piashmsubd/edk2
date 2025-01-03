@@ -1,0 +1,17 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = BaseCryptLib
+  FILE_GUID                      = 4F66271C-2A47-4206-9E59-CDFDF26476E8
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  PCD_IS_DRIVER                  = FALSE
+
+[Sources]
+  # আপনার সোর্স ফাইল উল্লেখ করুন
+  BaseCryptLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  BaseMemoryLib|MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
