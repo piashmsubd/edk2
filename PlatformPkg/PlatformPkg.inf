@@ -1,0 +1,18 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = PlatformPkg
+  FILE_GUID                      = A1F2FDED-9E56-43E4-97FB-FD29CB4CFC0F
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  PCD_IS_DRIVER                  = FALSE
+
+[Sources]
+  # আপনার সোর্স ফাইল উল্লেখ করুন
+  PlatformPkg.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+  UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
