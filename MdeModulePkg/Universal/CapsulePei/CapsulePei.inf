@@ -1,83 +1,21 @@
-# This driver will have external input - capsule image.
-# This external input must be validated carefully to avoid security issue like
-# buffer overflow, integer overflow.
-
-# Copyright (c) 2006 - 2019, Intel Corporation. All rights reserved.<BR>
-# Copyright (c) 2017, AMD Incorporated. All rights reserved.<BR>
-#
-# SPDX-License-Identifier: BSD-2-Clause-Patent
-#
-
 [Defines]
   INF_VERSION                    = 0x00010005
   BASE_NAME                      = CapsulePei
-  MODULE_UNI_FILE                = CapsulePei.uni
-  FILE_GUID                      = C779F6D8-7113-4AA1-9648-EB1633C7D53B
+  FILE_GUID                      = BFA6F5B6-3A73-4E39-8B24-77F2F9C4D4B5
   MODULE_TYPE                    = PEIM
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = CapsuleMain
-
-#
-# The following information is for reference only and not required by the build tools.
-#
-#  VALID_ARCHITECTURES           = IA32 X64 EBC
-#
+  ENTRY_POINT                    = CapsulePeiEntryPoint
+  PCD_IS_DRIVER                  = TRUE
 
 [Sources]
-  UefiCapsule.c
-  Capsule.h
-  Common/CapsuleCoalesce.c
-  Common/CommonHeader.h
+  CapsulePei.c
 
 [Packages]
   MdePkg/MdePkg.dec
-  MdeModulePkg/MdeModulePkg.dec
 
 [LibraryClasses]
   BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
-  HobLib|MdePkg/Library/HobLib/HobLib.inf
-  BaseMemoryLib|MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
-  MemoryAllocationLib|MdePkg/Library/MemoryAllocationLib/MemoryAllocationLib.inf
-  PeiServicesLib|MdePkg/Library/PeiServicesLib/PeiServicesLib.inf
-  PeimEntryPoint|MdePkg/Library/PeimEntryPoint/PeimEntryPoint.inf
-  DebugLib|MdePkg/Library/DebugLib/DebugLib.inf
-  PeiServicesTablePointerLib|MdePkg/Library/PeiServicesTablePointerLib/PeiServicesTablePointerLib.inf
-  PrintLib|MdePkg/Library/PrintLib/PrintLib.inf
-  ReportStatusCodeLib|MdePkg/Library/ReportStatusCodeLib/ReportStatusCodeLib.inf
+  UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+  UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
 
-[LibraryClasses.IA32]
-  PeCoffGetEntryPointLib|MdePkg/Library/PeCoffGetEntryPointLib/PeCoffGetEntryPointLib.inf
-  PcdLib|MdePkg/Library/PcdLib/PcdLib.inf
-  DebugAgentLib|MdePkg/Library/DebugAgentLib/DebugAgentLib.inf
-
-[Guids]
-  ## SOMETIMES_CONSUMES  ## Variable:L\"CapsuleUpdateData\"
-  ## SOMETIMES_CONSUMES  ## Variable:L\"CapsuleLongModeBuffer\"
-  gEfiCapsuleVendorGuid
-
-[Ppis]
-  gEfiPeiReadOnlyVariable2PpiGuid  ## CONSUMES
-  gEfiPeiCapsulePpiGuid            ## PRODUCES
-
-[Ppis.IA32]
-  gEfiPeiLoadFilePpiGuid           ## SOMETIMES_CONSUMES
-
-[Pcd.IA32]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdCapsuleCoalesceFile  ## SOMETIMES_CONSUMES
-  gEfiMdeModulePkgTokenSpaceGuid.PcdUse1GPageTable       ## SOMETIMES_CONSUMES
-  gEfiMdeModulePkgTokenSpaceGuid.PcdSetMemoryEncryptionAddressOrMask  ## CONSUMES
-
-[FeaturePcd.IA32]
-  gEfiMdeModulePkgTokenSpaceGuid.PcdDxeIplSwitchToLongMode  ## CONSUMES
-
-[Depex]
-  gEfiPeiReadOnlyVariable2PpiGuid
-
-[BootMode]
-  ## FLASH_UPDATE        ## SOMETIMES_CONSUMES
-
-[Hob.IA32]
-  ## UNDEFINED           ## SOMETIMES_CONSUMES # CPU
-
-[Hob]
-  ## UNDEFINED           ## SOMETIMES PRODUCES # UEFI CAPSULE
+# [BootMode] সেকশনটি মুছে ফেলা হলো
