@@ -27,4 +27,5 @@
   PlatformPkg/Drivers/WifiDxe/WifiDxe.inf
 
 [BuildOptions]
-  GCC:*_*_CC_FLAGS         = -mfpu=neon -mfloat-abi=hard -march=armv8-a -mtune=cortex-a75
+  DEBUG_GCC5_AARCH64_CC_FLAGS = -mfpu=neon -mfloat-abi=hard -march=armv8-a -mtune=cortex-a75
+  RELEASE_GCC5_AARCH64_CC_FLAGS = -mfpu=neon -mfloat-abi=hard -march=armv8-a -mtune=cortex-a75
