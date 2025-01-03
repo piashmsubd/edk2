@@ -25,6 +25,7 @@
 #
 
 [Sources]
+  Baselib.c
   CheckSum.c
   SwitchStack.c
   SwapBytes64.c
