@@ -5,10 +5,11 @@
   DSC_SPECIFICATION       = 0x00010005
   OUTPUT_DIRECTORY        = Build/NX669J_12.1
   SUPPORTED_ARCHITECTURES = AARCH64
-  BUILD_TARGETS           = DEBUG  # অথবা RELEASE
+  BUILD_TARGETS           = DEBUG
   SKUID_IDENTIFIER        = DEFAULT
 
 [LibraryClasses]
+  BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
   BaseCryptLib|MdePkg/Library/BaseCryptLib/BaseCryptLib.inf
   BaseMemoryLib|MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
   UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
@@ -20,7 +21,7 @@
 
 [Components]
   MdeModulePkg/Universal/CapsulePei/CapsulePei.inf
-  ArmPkg/ArmPkg.inf  # ArmPlatformPkg/ArmPlatformPkg.dsc changed to ArmPkg/ArmPkg.inf
+  ArmPkg/ArmPkg.inf
   PlatformPkg/PlatformPkg.inf
   PlatformPkg/Drivers/CoolingFanDxe/CoolingFanDxe.inf
   PlatformPkg/Drivers/BluetoothDxe/BluetoothDxe.inf
