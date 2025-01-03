@@ -1,11 +1,11 @@
 [Defines]
   PLATFORM_NAME           = NX669J_12.1
-  PLATFORM_GUID           = 8A21FE2B-EE05-4D4D-8A2F-70867A4ACD9A
+  PLATFORM_GUID           = 8A21FEB8-EE05-4D4D-8A2F-70867AA4CD9A
   PLATFORM_VERSION        = 1.0
   DSC_SPECIFICATION       = 0x00010005
   OUTPUT_DIRECTORY        = Build/NX669J_12.1
   SUPPORTED_ARCHITECTURES = AARCH64
-  BUILD_TARGETS           = DEBUG|RELEASE
+  BUILD_TARGETS           = DEBUG RELEASE
   SKUID_IDENTIFIER        = DEFAULT
 
 [LibraryClasses]
@@ -20,7 +20,7 @@
 
 [Components]
   MdeModulePkg/Universal/CapsulePei/CapsulePei.inf
-  ArmPlatformPkg/Universal/ArmPkg/ArmPkg.inf  # ArmPlatformPkg/ArmPlatformPkg.dsc এর জায়গায়
+  ArmPkg/ArmPkg.inf  # ArmPlatformPkg/ArmPlatformPkg.dsc এর অধীনে ArmPkg/ArmPkg.inf
   PlatformPkg/PlatformPkg.dsc
   PlatformPkg/Drivers/CoolingFanDxe/CoolingFanDxe.inf
   PlatformPkg/Drivers/BluetoothDxe/BluetoothDxe.inf
