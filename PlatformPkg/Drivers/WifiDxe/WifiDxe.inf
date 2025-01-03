@@ -1,0 +1,18 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = WifiDxe
+  FILE_GUID                      = A1F2FDED-9E56-43E4-97FB-FD29CB4CFC3C
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = WifiDxeEntryPoint
+  PCD_IS_DRIVER                  = TRUE
+
+[Sources]
+  WifiDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+  UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
