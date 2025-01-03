@@ -15,7 +15,5 @@
 
 [LibraryClasses]
   BaseLib|MdePkg/Library/BaseLib/BaseLib.inf
-  UefiBootServicesTableLib|MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+  PeiServicesTableLib|MdePkg/Library/PeiServicesTableLib/PeiServicesTableLib.inf
   UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
-
-# [BootMode] সেকশনটি মুছে ফেলা হলো
